@@ -3,7 +3,7 @@ import React, {useState} from "react";
 const green = '#39D1B4';
 const yellow = '#FFD712';
 
-function Color () {
+export function Color () {
     const[color, setColor] = useState(green);
     
     const changeColor = () => {
@@ -17,4 +17,3 @@ return (
     </div>
 )};
 
-export default Color;

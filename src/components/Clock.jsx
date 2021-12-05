@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect} from 'react';
 
-let currentTime = new Date().toLocaleTimeString();
+export function Time() {
+    const [date, setDate] = useState(new Date());
 
-function Time() {
-    const [time, setTime] = useState(currentTime);
-   
+    function Seconds() {
+        setDate(new Date());
+    }
 
-    const oneSecond = 1;
-    
-    setInterval(() => {
-        setTime(currentTime + oneSecond);
-    })
+    useEffect(() => {
+        const countingSeconds = setInterval(Seconds, 1000);
+        return function cleanup() {
+            clearInterval(countingSeconds);
+        };
+    }, []);   // tühi massiiv [] kasutab effekti ühe korra peale esimest renderdust, ilma selleta(nii: "});" ) iga renderdusega
+
 
     return (
-        <div>{time}</div>
+        <>
+        kell {date.toLocaleTimeString()}
+        </>
     )
-}
+};
 
-export default Time;
+
 

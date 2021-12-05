@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
-function EnterName() {
+export function EnterName() {
     const [name, setName] = useState("Stranger");
   
     const handleSubmit = (event) => {
       setName(event.target.value)
     }
-    
-    const greeting = <h1>Hello, {name}!</h1>
-
-    return (     
+    console.log(name);
+        
+    return (  
+    <>   
       <form onSubmit={handleSubmit}>
         <label>Enter your name:
           <input 
@@ -20,10 +20,9 @@ function EnterName() {
           />
         </label>
         <input type="submit" />
-        {greeting}
-      </form>      
+      </form> 
+    </>    
     )
-  }
+  };
 
 
-  export default EnterName;

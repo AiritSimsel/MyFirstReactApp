@@ -1,10 +1,11 @@
 import './App.css';
-import AddNumber from './components/Increment';
-import Header from './components/Header';
-import EnterName from './components/EnterName';
-import Offices from './components/RROffices';
-import Time from './components/Clock';
-import Color from './components/ChangeColor';
+import {AddNumber} from './components/Increment';
+import {Header} from './components/Header';
+import {EnterName} from './components/EnterName';
+import {Offices} from './components/RROffices';
+import {Time} from './components/Clock';
+import {Color} from './components/ChangeColor';
+import {Greeting} from './components/Greeting';
 
 
 let currentTime = new Date().toLocaleTimeString();
@@ -17,12 +18,13 @@ function App() {
           <Header page='https://github.com/AiritSimsel'/>
       </header>
       <body>           
-      <p><AddNumber/></p>
-      <p><EnterName/></p>
+      <><AddNumber/></>
+      <><EnterName/></>
+      <><Greeting/></>
       <span className="time">{currentTime}</span>   
       <span className="date">{currentDate}</span>
-      <p><Offices company = 'Reverse Resources' country = {['Estonia', 'Bangladesh']} city = {['Tallinn', 'Tartu', 'Dhaka']}/></p>
-      <p><Time/></p>
+      <><Offices company = 'Reverse Resources' country = {['Estonia', 'Bangladesh']} city = {['Tallinn', 'Tartu', 'Dhaka']}/></>
+      <><Time /></>
       <span><Color/></span>
       </body>
     </div>
